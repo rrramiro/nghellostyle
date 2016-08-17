@@ -24,24 +24,22 @@ module.exports = function(config) {
       'app/states/**/*.js',
 
       // app.js has to be loaded at the end to make goog.require work
-      'app/js/app.js'
+      'app/js/app.js',
+      'test/unit/**/*.js'
     ],
 
-    exclude: [
-      'app/states/**/*.pageobject.js',
-      'app/states/**/*.scenario.js',
-    ],
+    exclude: [],
 
     autoWatch: false,
 
-    browsers: ['Firefox', 'PhantomJS'],
+    browsers: ['Firefox'], //'PhantomJS'
 
     singleRun: true,
 
     preprocessors: {
       'app/js/app.js': 'coverage',
-      'app/states/**/!(*.pageobject|*.scenario|*.spec).js': 'coverage',
-      'app/components/**/!(*.spec).js': 'coverage'
+      'app/states/**/*.js': 'coverage',
+      'app/components/**/*.js': 'coverage'
     },
 
     reporters: ['spec', 'coverage'],

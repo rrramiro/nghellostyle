@@ -3,13 +3,14 @@
 exports.config = {
 
   specs: [
-    'scenarios.js',
-    '../../app/states/**/*.scenario.js'
+    '*.scenario.js'
   ],
 
   capabilities: {
-    'browserName': 'firefox'
+    'browserName': 'chrome'
   },
+
+  seleniumAddress: 'http://localhost:4444/wd/hub',
 
   baseUrl: 'http://localhost:8001/',
 
